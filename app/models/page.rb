@@ -4,7 +4,7 @@ class Page < ApplicationRecord
   has_one :h1, class_name: 'PageContent::H1'
   has_one :h2, class_name: 'PageContent::H2'
   has_one :h3, class_name: 'PageContent::H3'
-  has_many :links, class_name: 'PageContent::Link'
+  has_many :link_contents, class_name: 'PageContent::LinkContent'
 
   def parse
     agent = Mechanize.new
@@ -14,7 +14,7 @@ class Page < ApplicationRecord
     store_tag(page, 'h3')
 
     page.css('a').each do |link|
-      links.create(content: link.attr('href'))
+      link_contents.create(content: link.attr('href'))
     end
   end
 

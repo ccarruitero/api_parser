@@ -3,5 +3,5 @@ class PageResource < JSONAPI::Resource
   has_one :h1
   has_one :h2
   has_one :h3
-  has_many :links
+  has_many :link_contents
 end

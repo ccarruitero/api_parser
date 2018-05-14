@@ -6,7 +6,7 @@ Rails.application.routes.draw do
     jsonapi_related_resource :h2
     jsonapi_links :h3, only: [:show]
     jsonapi_related_resource :h3
-    jsonapi_links :links, only: [:show]
-    jsonapi_related_resources :links
+    jsonapi_links :link_contents, only: [:show]
+    jsonapi_related_resources :link_contents
   end
 end
