@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'mechanize'
 
 class Page < ApplicationRecord
@@ -26,7 +28,7 @@ class Page < ApplicationRecord
 
   def store_tag(page, tag)
     page_tag = page.css(tag)
-    return unless page_tag.count > 0
+    return unless page_tag.count.positive?
     send("build_#{tag}", content: page_tag.first.text.strip).save
   end
 end

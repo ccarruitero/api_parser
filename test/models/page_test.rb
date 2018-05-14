@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'test_helper'
 
 class PageTest < ActiveSupport::TestCase
@@ -13,6 +15,6 @@ class PageTest < ActiveSupport::TestCase
     assert_not page.h1.content.nil?
     assert_not page.h2.content.nil?
     assert_not page.h3.content.nil?
-    assert page.link_contents.count > 0
+    assert page.link_contents.count.positive?
   end
 end
