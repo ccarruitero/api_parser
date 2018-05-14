@@ -7,6 +7,8 @@ class Page < ApplicationRecord
   has_one :h3, class_name: 'PageContent::H3'
   has_many :link_contents, class_name: 'PageContent::LinkContent'
 
+  validates :url, presence: true, uniqueness: true
+
   after_create :parse
 
   def parse
