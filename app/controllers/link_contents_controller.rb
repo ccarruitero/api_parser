@@ -1,0 +1,2 @@
+class LinkContentsController < ApplicationController
+end
