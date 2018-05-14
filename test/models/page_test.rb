@@ -7,8 +7,7 @@ class PageTest < ActiveSupport::TestCase
   should have_many(:link_contents)
 
   test '#parse' do
-    page = Page.new(url: 'https://www.nytimes.com/2018/05/14/world/middleeast/gaza-protests-palestinians-us-embassy.html')
-    page.parse
+    page = Page.create(url: 'https://www.nytimes.com/2018/05/14/world/middleeast/gaza-protests-palestinians-us-embassy.html')
     assert_not page.h1.content.nil?
     assert_not page.h2.content.nil?
     assert_not page.h3.content.nil?
