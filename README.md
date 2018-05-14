@@ -1,24 +1,56 @@
-# README
+# api_parser
+just a json-api compliant server
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Installation
 
-Things you may want to cover:
+### Requirements
+- ruby
+- bundler
 
-* Ruby version
+First you need to clone the repository, you can do this by:
 
-* System dependencies
+```
+git clone https://github.com/ccarruitero/api_parser.git
+```
 
-* Configuration
+Then install gems
 
-* Database creation
+```
+bundle install
+```
 
-* Database initialization
+Setup your database.
 
-* How to run the test suite
+We are using `postgresql`, and setting our database credentials in an `.env`
+file. But you can customize the database or how to load credentials to use
+changing the `config/database.yml` and adding desired gems to `Gemfile` if
+necessary.
 
-* Services (job queues, cache servers, search engines, etc.)
+In order to create the database you can run: (if you have already created the
+database you can omit)
+```
+rake db:create
+```
 
-* Deployment instructions
+Then run the migrations
+```
+rake db:migrate
+```
 
-* ...
+Finally, start the development server:
+```
+./bin/rails s
+```
+
+## Tests
+
+You can run the tests by:
+
+```
+rake test
+```
+
+And for the code lint:
+```
+rubocop
+```
