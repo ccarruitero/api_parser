@@ -44,8 +44,9 @@ end
 group :test do
   gem 'shoulda-context'
   gem 'shoulda-matchers'
+  gem 'pry'
 end
-
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+gem 'mechanize'
